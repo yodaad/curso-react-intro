@@ -1,0 +1,16 @@
+.countContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 200;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  border: 4px solid #f58335;
+  border-radius: 15px;
+  display: inline-block;
+}
