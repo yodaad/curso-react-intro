@@ -14,6 +14,10 @@
   position: relative;
 }
 
+.searchContainer input:focus {
+  outline-color: #5a7eb7;
+}
+
 .searchContainer img {
   position: absolute;
   width: 1.7rem;
