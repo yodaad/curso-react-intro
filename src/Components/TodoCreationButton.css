@@ -23,9 +23,8 @@
   font-size: 40px;
   border-radius: 20px;
   margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 1em;
-  margin-right: 15px;
+  box-shadow: 2px 2px black;
+  margin: 1em 15px 1em 15px;
   height: 3em;
   width: 100%;
   cursor: pointer;
