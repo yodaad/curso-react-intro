@@ -6,18 +6,26 @@ import { TodoItem } from "./Components/TodoItem";
 import { TodoCreationButton } from "./Components/TodoCreationButton";
 
 const defaultTodos = [
-  { number: "1. ", text: "Hacer compras", completed: true },
-  { number: "2. ", text: "Crear cuentas de marketing", completed: false },
-  { number: "3. ", text: "Ir al banco", completed: false },
-  { number: "4. ", text: "Hacer aseo en la casa", completed: false },
+  { number: "1.", text: "Hacer compras", completed: true },
+  { number: "2.", text: "Crear cuentas de marketing", completed: false },
+  { number: "3.", text: "Ir al banco", completed: false },
+  { number: "4.", text: "Hacer aseo en la casa", completed: false },
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState("");
+
+  const completedTodos = todos.filter((todo) => !!todo.completed).length;
+  const totalTodos = todos.length;
+
+  console.log(searchValue);
+
   return (
     <>
-      <TodoCount completed={16} total={25} />
+      <TodoCount completed={completedTodos} total={totalTodos} />
 
-      <TodoSearch />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
         {defaultTodos.map((todo) => (
