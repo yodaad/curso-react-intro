@@ -3,7 +3,7 @@ import "./TodoCreationButton.css";
 function TodoCreationButton() {
   return (
     <div className="buttonContainer">
-      <button>+</button>
+      <button onClick={() => console.log("Clicked")}>+</button>
     </div>
   );
 }

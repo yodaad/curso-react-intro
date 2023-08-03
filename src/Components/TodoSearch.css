@@ -9,19 +9,11 @@
   font-size: 30px;
   border-radius: 40px;
   text-align: center;
-  padding: 4px 2.5rem 4px 4px;
+  padding: 4px;
   margin-bottom: 25px;
   position: relative;
 }
 
 .searchContainer input:focus {
   outline-color: #5a7eb7;
-}
-
-.searchContainer img {
-  position: absolute;
-  width: 1.7rem;
-  height: 1.7rem;
-  padding-top: 0.5em;
-  margin-left: 22em;
 }
