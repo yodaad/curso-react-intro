@@ -6,12 +6,15 @@ function TodoItem(props) {
       <button className="edit"></button>
       <button
         className={`check-mark ${props.completed && "check-mark-active"}`}
+        onClick={props.onComplete}
       ></button>
-      <p className="numbers">{props.number}</p>
       <p className={`text ${props.completed && "text-completed"}`}>
         {props.text}
       </p>
-      <button className="delete delete-active"></button>
+      <button
+        className="delete delete-active"
+        onClick={props.onDelete}
+      ></button>
     </li>
   );
 }
