@@ -1,7 +1,11 @@
 import "./TodoCount.css";
 
 function TodoCount({ total, completed }) {
-  return (
+  return completed === total ? (
+    <div className="countContainer">
+      <h1 className="TodoCounter">Tareas completadas!</h1>
+    </div>
+  ) : (
     <div className="countContainer">
       <h1>
         {completed} tareas completadas de {total}
