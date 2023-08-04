@@ -12,8 +12,8 @@ function TodoItem(props) {
         {props.text}
       </p>
       <button
-        className="delete delete-active"
-        onClick={props.onDelete}
+        className="delete delete-active open-delete-modal"
+        onClick={props.onOpenDeleteModal}
       ></button>
     </li>
   );

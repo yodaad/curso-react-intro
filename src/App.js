@@ -4,6 +4,7 @@ import { TodoSearch } from "./Components/TodoSearch";
 import { TodoList } from "./Components/TodoList";
 import { TodoItem } from "./Components/TodoItem";
 import { TodoCreationButton } from "./Components/TodoCreationButton";
+import { DeleteModal } from "./Components/DeleteModal";
 
 const defaultTodos = [
   { text: "Hacer compras", completed: true },
@@ -15,7 +16,9 @@ const defaultTodos = [
 
 function App() {
   const [todos, setTodos] = React.useState(defaultTodos);
+  const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
+  const [todoToDelete, setTodoToDelete] = React.useState(null);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -34,14 +37,20 @@ function App() {
   };
 
   const deleteTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
-    newTodos.splice(todoIndex, 1);
+    const newTodos = todos.filter((todo) => todo.text !== text);
     setTodos(newTodos);
+    setOpenDeleteModal(false);
   };
 
   return (
     <>
+      {openDeleteModal && (
+        <DeleteModal
+          closeModal={() => setOpenDeleteModal(false)}
+          onDelete={() => deleteTodo(todoToDelete)}
+        />
+      )}
+
       <TodoCount completed={completedTodos} total={totalTodos} />
 
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
@@ -53,7 +62,10 @@ function App() {
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
+            onOpenDeleteModal={() => {
+              setOpenDeleteModal(true);
+              setTodoToDelete(todo.text);
+            }}
           />
         ))}
       </TodoList>
