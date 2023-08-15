@@ -6,7 +6,7 @@ import { TodoItem } from "./Components/TodoItem";
 import { TodoCreationButton } from "./Components/TodoCreationButton";
 import { DeleteModal } from "./Components/DeleteModal";
 
-const defaultTodos = [
+/* const defaultTodos = [
   { text: "Hacer compras", completed: true },
   { text: "Crear cuentas de marketing", completed: false },
   { text: "Ir al banco", completed: false },
@@ -14,8 +14,22 @@ const defaultTodos = [
   { text: "Enviar cotizaciones", completed: true },
 ];
 
+localStorage.setItem('TASKAPP_V1', JSON.stringify(defaultTodos));
+localStorage.removeItem('TASKAPP_V1');  */
+
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const localStorageTodos = localStorage.getItem("TASKAPP_V1");
+
+  let parsedTodos;
+
+  if (!localStorageTodos) {
+    localStorage.setItem("TASKAPP_V1", JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+  const [todos, setTodos] = React.useState(parsedTodos);
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [todoToDelete, setTodoToDelete] = React.useState(null);
