@@ -1,5 +1,5 @@
 import React from "react";
-import "./DeleteModal.css";
+import "../Styles/DeleteModal.css";
 
 function DeleteModal({ closeModal, onDelete }) {
   return (
