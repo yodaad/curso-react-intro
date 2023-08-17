@@ -5,6 +5,7 @@ import { TodoList } from "./Components/TodoList";
 import { TodoItem } from "./Components/TodoItem";
 import { TodoCreationButton } from "./Components/TodoCreationButton";
 import { DeleteModal } from "./Components/DeleteModal";
+import { useLocalStorage } from "./useLocalStorage";
 
 /* const defaultTodos = [
   { text: "Hacer compras", completed: true },
@@ -16,28 +17,6 @@ import { DeleteModal } from "./Components/DeleteModal";
 
 localStorage.setItem('TASKAPP_V1', JSON.stringify(defaultTodos));
 localStorage.removeItem('TASKAPP_V1');  */
-
-function useLocalStorage(itemName, initialValue) {
-  const localStorageItem = localStorage.getItem(itemName);
-
-  let parsedItem;
-
-  if (!localStorageItem) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItem = initialValue;
-  } else {
-    parsedItem = JSON.parse(localStorageItem);
-  }
-
-  const [item, setItem] = React.useState(parsedItem);
-
-  const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
-  };
-
-  return [item, saveItem];
-}
 
 function App() {
   const [todos, saveTodos] = useLocalStorage("TASKAPP_V1", []);
