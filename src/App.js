@@ -1,10 +1,5 @@
 import React from "react";
-import { TodoCount } from "./Components/TodoCount";
-import { TodoSearch } from "./Components/TodoSearch";
-import { TodoList } from "./Components/TodoList";
-import { TodoItem } from "./Components/TodoItem";
-import { TodoCreationButton } from "./Components/TodoCreationButton";
-import { DeleteModal } from "./Components/DeleteModal";
+import { AppUI } from "./Components/AppUI";
 import { useLocalStorage } from "./useLocalStorage";
 
 /* const defaultTodos = [
@@ -47,34 +42,19 @@ function App() {
   };
 
   return (
-    <>
-      {openDeleteModal && (
-        <DeleteModal
-          closeModal={() => setOpenDeleteModal(false)}
-          onDelete={() => deleteTodo(todoToDelete)}
-        />
-      )}
-
-      <TodoCount completed={completedTodos} total={totalTodos} />
-
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-
-      <TodoList>
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onOpenDeleteModal={() => {
-              setOpenDeleteModal(true);
-              setTodoToDelete(todo.text);
-            }}
-          />
-        ))}
-      </TodoList>
-      <TodoCreationButton />
-    </>
+    <AppUI
+      openDeleteModal={openDeleteModal}
+      setOpenDeleteModal={setOpenDeleteModal}
+      deleteTodo={deleteTodo}
+      todoToDelete={todoToDelete}
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      setTodoToDelete={setTodoToDelete}
+    />
   );
 }
 
