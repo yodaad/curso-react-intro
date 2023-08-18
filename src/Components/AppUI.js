@@ -6,6 +6,8 @@ import { TodoCreationButton } from "./TodoCreationButton";
 import { DeleteModal } from "./DeleteModal";
 
 function AppUI({
+  loading,
+  error,
   openDeleteModal,
   setOpenDeleteModal,
   deleteTodo,
@@ -32,6 +34,12 @@ function AppUI({
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
+        {loading && <p>Loading</p>}
+        {error && <p>There was an error</p>}
+        {!loading && searchedTodos.length === 0 && (
+          <p>Create your first task</p>
+        )}
+
         {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}

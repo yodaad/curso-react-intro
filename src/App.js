@@ -14,7 +14,12 @@ localStorage.setItem('TASKAPP_V1', JSON.stringify(defaultTodos));
 localStorage.removeItem('TASKAPP_V1');  */
 
 function App() {
-  const [todos, saveTodos] = useLocalStorage("TASKAPP_V1", []);
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage("TASKAPP_V1", []);
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [todoToDelete, setTodoToDelete] = React.useState(null);
@@ -43,6 +48,8 @@ function App() {
 
   return (
     <AppUI
+      loading={loading}
+      error={error}
       openDeleteModal={openDeleteModal}
       setOpenDeleteModal={setOpenDeleteModal}
       deleteTodo={deleteTodo}
