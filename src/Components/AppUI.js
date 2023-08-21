@@ -1,3 +1,4 @@
+import React from "react";
 import { TodoCount } from "./TodoCount";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
@@ -10,55 +11,51 @@ import { EmptyTodos } from "./EmptyTodos";
 import { DeleteModal } from "./DeleteModal";
 
 function AppUI() {
+  const {
+    loading,
+    error,
+    openDeleteModal,
+    setOpenDeleteModal,
+    deleteTodo,
+    todoToDelete,
+    searchedTodos,
+    completeTodo,
+    setTodoToDelete,
+  } = React.useContext(TodoContext);
+
   return (
-    <div>
-      <TodoContext.Consumer>
-        {({
-          loading,
-          error,
-          openDeleteModal,
-          setOpenDeleteModal,
-          deleteTodo,
-          todoToDelete,
-          searchedTodos,
-          completeTodo,
-          setTodoToDelete,
-        }) => (
-          <>
-            {openDeleteModal && (
-              <DeleteModal
-                closeModal={() => setOpenDeleteModal(false)}
-                onDelete={() => deleteTodo(todoToDelete)}
-              />
-            )}
+    <>
+      {openDeleteModal && (
+        <DeleteModal
+          closeModal={() => setOpenDeleteModal(false)}
+          onDelete={() => deleteTodo(todoToDelete)}
+        />
+      )}
 
-            <TodoCount />
+      <TodoCount />
 
-            <TodoSearch />
+      <TodoSearch />
 
-            <TodoList>
-              {loading && <TodosLoading />}
-              {error && <TodosError />}
-              {!loading && searchedTodos.length === 0 && <EmptyTodos />}
+      <TodoList>
+        {loading && <TodosLoading />}
+        {error && <TodosError />}
+        {!loading && searchedTodos.length === 0 && <EmptyTodos />}
 
-              {searchedTodos.map((todo) => (
-                <TodoItem
-                  key={todo.text}
-                  text={todo.text}
-                  completed={todo.completed}
-                  onComplete={() => completeTodo(todo.text)}
-                  onOpenDeleteModal={() => {
-                    setOpenDeleteModal(true);
-                    setTodoToDelete(todo.text);
-                  }}
-                />
-              ))}
-            </TodoList>
-          </>
-        )}
-      </TodoContext.Consumer>
+        {searchedTodos.map((todo) => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onOpenDeleteModal={() => {
+              setOpenDeleteModal(true);
+              setTodoToDelete(todo.text);
+            }}
+          />
+        ))}
+      </TodoList>
       <TodoCreationButton />
-    </div>
+    </>
   );
 }
 
