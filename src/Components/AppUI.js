@@ -6,9 +6,10 @@ import { TodoItem } from "./TodoItem";
 import { TodoCreationButton } from "./TodoCreationButton";
 import { TodosLoading } from "./TodosLoading";
 import { TodosError } from "./TodosError";
-import { TodoContext } from "./TodoContext";
 import { EmptyTodos } from "./EmptyTodos";
 import { DeleteModal } from "./DeleteModal";
+import { CreationModal } from "./CreationModal";
+import { TodoContext } from "./TodoContext";
 
 function AppUI() {
   const {
@@ -16,6 +17,8 @@ function AppUI() {
     error,
     openDeleteModal,
     setOpenDeleteModal,
+    openCreationModal,
+    setopenCreationModal,
     deleteTodo,
     todoToDelete,
     searchedTodos,
@@ -55,6 +58,10 @@ function AppUI() {
         ))}
       </TodoList>
       <TodoCreationButton />
+
+      {openCreationModal && (
+        <CreationModal>La funcionalidad de agregar TODO</CreationModal>
+      )}
     </>
   );
 }
