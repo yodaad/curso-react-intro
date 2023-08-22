@@ -1,9 +1,15 @@
 import "../Styles/TodoCreationButton.css";
 
-function TodoCreationButton() {
+function TodoCreationButton({ setOpenCreationModal }) {
   return (
     <div className="buttonContainer">
-      <button onClick={() => console.log("Clicked")}>+</button>
+      <button
+        onClick={() => {
+          setOpenCreationModal((state) => !state);
+        }}
+      >
+        +
+      </button>
     </div>
   );
 }

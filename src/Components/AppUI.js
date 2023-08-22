@@ -18,7 +18,7 @@ function AppUI() {
     openDeleteModal,
     setOpenDeleteModal,
     openCreationModal,
-    setopenCreationModal,
+    setOpenCreationModal,
     deleteTodo,
     todoToDelete,
     searchedTodos,
@@ -57,7 +57,7 @@ function AppUI() {
           />
         ))}
       </TodoList>
-      <TodoCreationButton />
+      <TodoCreationButton setOpenCreationModal={setOpenCreationModal} />
 
       {openCreationModal && (
         <CreationModal>La funcionalidad de agregar TODO</CreationModal>

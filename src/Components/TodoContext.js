@@ -11,7 +11,7 @@ function TodoProvider({ children }) {
     error,
   } = useLocalStorage("TASKAPP_V1", []);
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
-  const [openCreationModal, setopenCreationModal] = React.useState(false);
+  const [openCreationModal, setOpenCreationModal] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [todoToDelete, setTodoToDelete] = React.useState(null);
 
@@ -45,7 +45,7 @@ function TodoProvider({ children }) {
         openDeleteModal,
         setOpenDeleteModal,
         openCreationModal,
-        setopenCreationModal,
+        setOpenCreationModal,
         deleteTodo,
         todoToDelete,
         completedTodos,
