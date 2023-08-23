@@ -1,22 +1,40 @@
 import React from "react";
+import { TodoContext } from "./TodoContext";
 import "../Styles/TodoForm.css";
 
-function TodoForm({ closeForm }) {
+function TodoForm() {
+  const { addTodo, setOpenCreationModal } = React.useContext(TodoContext);
+  const [newTodoValue, setNewTodoValue] = React.useState("");
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    addTodo(newTodoValue);
+    setOpenCreationModal(false);
+  };
+
+  const onCancel = () => {
+    setOpenCreationModal(false);
+  };
+
+  const onChange = (event) => {
+    setNewTodoValue(event.target.value);
+  };
+
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-      }}
-    >
+    <form onSubmit={onSubmit}>
       <div className="TodoForm-close">
-        <button onClick={() => closeForm(false)}> X </button>
+        <button onClick={onCancel}> X </button>
       </div>
       <label>Write a new task</label>
-      <textarea placeholder="New Task" />
+      <textarea
+        placeholder="New Task"
+        value={newTodoValue}
+        onChange={onChange}
+      />
       <div className="TodoForm-buttonContainer">
         <button
           className="TodoForm-button TodoForm-button--cancel"
-          onClick={() => closeForm(false)}
+          onClick={onCancel}
         >
           Cancel
         </button>

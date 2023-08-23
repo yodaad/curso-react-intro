@@ -62,7 +62,7 @@ function AppUI() {
 
       {openCreationModal && (
         <CreationModal>
-          <TodoForm closeForm={() => setOpenCreationModal(false)} />
+          <TodoForm />
         </CreationModal>
       )}
     </>
