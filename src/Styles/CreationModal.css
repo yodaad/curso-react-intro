@@ -10,7 +10,7 @@
   bottom: 0;
 }
 
-.creationModal {
+/* .creationModal {
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -19,7 +19,7 @@
   border-radius: 20px;
   background-color: white;
   padding: 30px;
-}
+} */
 
 /* .deleteModalContainer .deleteModalTitle {
     display: inline-block;

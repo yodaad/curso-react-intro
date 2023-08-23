@@ -1,0 +1,68 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 350px;
+  height: 270px;
+  border: 5px solid #f58335;
+  border-radius: 20px;
+  background-color: white;
+  padding: 30px;
+}
+
+label {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 25px;
+}
+
+textarea {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  padding: 12px;
+  height: 90px;
+  width: calc(100% - 30px);
+}
+
+.TodoForm-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.TodoForm-close button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.TodoForm-button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  width: 150px;
+  height: 45px;
+  margin: 40px 10px 0px;
+  border: none;
+  border-radius: 20px;
+}
+
+.TodoForm-button--cancel {
+  background-color: red;
+}
+.TodoForm-button--accept {
+  background-color: green;
+}

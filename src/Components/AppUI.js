@@ -6,6 +6,7 @@ import { TodoItem } from "./TodoItem";
 import { TodoCreationButton } from "./TodoCreationButton";
 import { TodosLoading } from "./TodosLoading";
 import { TodosError } from "./TodosError";
+import { TodoForm } from "./TodoForm";
 import { EmptyTodos } from "./EmptyTodos";
 import { DeleteModal } from "./DeleteModal";
 import { CreationModal } from "./CreationModal";
@@ -60,7 +61,9 @@ function AppUI() {
       <TodoCreationButton setOpenCreationModal={setOpenCreationModal} />
 
       {openCreationModal && (
-        <CreationModal>La funcionalidad de agregar TODO</CreationModal>
+        <CreationModal>
+          <TodoForm closeForm={() => setOpenCreationModal(false)} />
+        </CreationModal>
       )}
     </>
   );
