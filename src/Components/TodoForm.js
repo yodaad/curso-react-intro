@@ -30,19 +30,20 @@ function TodoForm() {
         placeholder="New Task"
         value={newTodoValue}
         onChange={onChange}
+        required
       />
       <div className="TodoForm-buttonContainer">
-        <button
-          className="TodoForm-button TodoForm-button--cancel"
-          onClick={onCancel}
-        >
-          Cancel
-        </button>
         <button
           type="submit"
           className="TodoForm-button TodoForm-button--accept"
         >
           Add
+        </button>
+        <button
+          className="TodoForm-button TodoForm-button--cancel"
+          onClick={onCancel}
+        >
+          Cancel
         </button>
       </div>
     </form>
