@@ -3,11 +3,15 @@ import "../Styles/TodoCount.css";
 import { TodoContext } from "./TodoContext";
 
 function TodoCount() {
-  const { completedTodos, totalTodos } = React.useContext(TodoContext);
+  const { completedTodos, totalTodos, loading } = React.useContext(TodoContext);
 
-  return completedTodos === totalTodos ? (
+  return completedTodos === totalTodos && loading ? (
     <div className="countContainer">
-      <h1>Tareas completadas!</h1>
+      <h1>Loading...</h1>
+    </div>
+  ) : completedTodos === totalTodos ? (
+    <div className="countContainer">
+      <h1>No tasks available</h1>
     </div>
   ) : (
     <div className="countContainer">

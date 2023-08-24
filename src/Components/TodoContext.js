@@ -41,7 +41,6 @@ function TodoProvider({ children }) {
       todo.id === id ? { ...todo, text: newText } : todo
     );
     saveTodos(newTodos);
-    console.log(newTodos);
   };
 
   const completeTodo = (id) => {

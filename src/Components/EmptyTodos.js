@@ -1,7 +1,8 @@
 import React from "react";
+import "../Styles/EmptyTodos.css";
 
 function EmptyTodos() {
-  return <p>Create your first task!</p>;
+  return <h1 className="emptyTodosContainer">Create your first task!</h1>;
 }
 
 export { EmptyTodos };
