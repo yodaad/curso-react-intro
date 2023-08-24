@@ -58,7 +58,7 @@ function AppUI() {
               setOpenDeleteModal(true);
               setTodoToDelete(todo.text);
             }}
-            onOpenDeletionModal={() => {
+            onOpenEditionModal={() => {
               setOpenEditionModal(true);
             }}
           />
