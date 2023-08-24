@@ -1,68 +1,68 @@
-.deleteModalBackground {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.89);
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.deleteModalContainer {
+form {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 220px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 350px;
+  height: 270px;
   border: 5px solid #f58335;
   border-radius: 20px;
   background-color: white;
   padding: 30px;
 }
 
-.deleteModalContainer .deleteModalTitle {
-  display: inline-block;
+label {
   text-align: center;
-  margin-top: 10px;
-  font-size: larger;
-  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 25px;
 }
 
-.deleteModalClose {
-  display: flex;
-  justify-content: flex-end;
+textarea {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  padding: 12px;
+  height: 90px;
+  width: calc(100% - 30px);
 }
 
-.deleteModalClose button {
+.TodoForm-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.TodoForm-close button {
   border: none;
   background-color: transparent;
   font-size: 20px;
   cursor: pointer;
 }
 
-.deleteModalContainer .deleteModalFooter {
-  display: flex;
-  justify-content: space-around;
-}
-
-.deleteModalContainer .deleteModalFooter button {
+.TodoForm-button {
+  cursor: pointer;
+  display: inline-block;
   font-size: 1em;
   font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
   width: 150px;
   height: 45px;
-  margin: 10px;
+  margin: 40px 10px 0px;
   border: none;
   border-radius: 20px;
-  cursor: pointer;
 }
 
-.deleteModalYes {
-  background-color: green;
-}
-
-.deleteModalNo {
+.TodoForm-button--cancel {
   background-color: red;
+}
+.TodoForm-button--accept {
+  background-color: green;
 }
