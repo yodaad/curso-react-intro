@@ -95,3 +95,30 @@ li {
   height: 5em;
   cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+  .itemContainer .edit,
+  .itemContainer .edit:hover {
+    width: 2em;
+    height: 2em;
+    top: 1.5em;
+  }
+
+  .itemContainer .check-mark,
+  .itemContainer .check-mark:hover {
+    width: 3em;
+    height: 3em;
+    top: 1em;
+  }
+  .itemContainer .check-mark-active {
+    width: 3em;
+    height: 3em;
+  }
+
+  .itemContainer .delete,
+  .itemContainer .delete:hover {
+    width: 2em;
+    height: 2em;
+    top: 1.4em;
+  }
+}
