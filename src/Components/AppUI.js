@@ -25,6 +25,7 @@ function AppUI() {
     setOpenEditionModal,
     deleteTodo,
     todoToDelete,
+    setTodoToEdit,
     searchedTodos,
     completeTodo,
     setTodoToDelete,
@@ -60,6 +61,7 @@ function AppUI() {
             }}
             onOpenEditionModal={() => {
               setOpenEditionModal(true);
+              setTodoToEdit(todo.id);
             }}
           />
         ))}

@@ -3,12 +3,13 @@ import { TodoContext } from "./TodoContext";
 import "../Styles/EditTodoForm.css";
 
 function EditTodoForm() {
-  const { editTodo, setOpenEditionModal } = React.useContext(TodoContext);
+  const { editTodo, setOpenEditionModal, todoToEdit } =
+    React.useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = React.useState("");
 
   const onSubmit = (event) => {
     event.preventDefault();
-    editTodo(newTodoValue);
+    editTodo(todoToEdit, newTodoValue);
     setOpenEditionModal(false);
   };
 

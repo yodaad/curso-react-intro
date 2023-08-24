@@ -15,6 +15,7 @@ function TodoProvider({ children }) {
   const [openEditionModal, setOpenEditionModal] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [todoToDelete, setTodoToDelete] = React.useState(null);
+  const [todoToEdit, setTodoToEdit] = React.useState(null);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -35,14 +36,10 @@ function TodoProvider({ children }) {
     saveTodos(newTodos);
   };
 
-  const editTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
-    console.log(todoIndex);
-    newTodos[todoIndex] = {
-      text,
-      completed: false,
-    };
+  const editTodo = (id, newText) => {
+    const newTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, text: newText } : todo
+    );
     saveTodos(newTodos);
     console.log(newTodos);
   };
@@ -75,6 +72,8 @@ function TodoProvider({ children }) {
         editTodo,
         deleteTodo,
         todoToDelete,
+        todoToEdit,
+        setTodoToEdit,
         completedTodos,
         totalTodos,
         searchValue,
