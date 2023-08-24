@@ -3,9 +3,9 @@ body {
   font-family: "Calibri", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("./Assets/to-do-list-opa.png") no-repeat;
+  background: url("./Assets/to-do-list-opa.png") no-repeat center center;
+  background-attachment: fixed;
   background-size: 33%;
-  background-position: center;
 }
 
 code {
