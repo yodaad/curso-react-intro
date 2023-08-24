@@ -11,12 +11,12 @@ function TodoCount() {
     </div>
   ) : completedTodos === totalTodos ? (
     <div className="countContainer">
-      <h1>No tasks available</h1>
+      <h1>No pending tasks</h1>
     </div>
   ) : (
     <div className="countContainer">
       <h1>
-        {completedTodos} tareas completadas de {totalTodos}
+        {completedTodos} tasks completed out of {totalTodos}
       </h1>
     </div>
   );

@@ -18,6 +18,12 @@ li {
   margin-top: 1.3em;
 }
 
+.id {
+  color: #f58335;
+  margin-top: 1.3em;
+  margin-right: 0.5em;
+}
+
 .itemContainer .text-completed {
   text-decoration: line-through;
 }

@@ -25,7 +25,7 @@ function TodoForm() {
       <div className="TodoForm-close">
         <button onClick={onCancel}> X </button>
       </div>
-      <label>Write a new task</label>
+      <label>Write a new task to create</label>
       <textarea
         placeholder="New Task"
         value={newTodoValue}
@@ -37,7 +37,7 @@ function TodoForm() {
           type="submit"
           className="TodoForm-button TodoForm-button--accept"
         >
-          Add
+          Create
         </button>
         <button
           className="TodoForm-button TodoForm-button--cancel"

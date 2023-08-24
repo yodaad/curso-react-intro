@@ -8,6 +8,7 @@ function TodoItem(props) {
         className={`check-mark ${props.completed && "check-mark-active"}`}
         onClick={props.onComplete}
       ></button>
+      <p className="id">{props.id}.</p>
       <p className={`text ${props.completed && "text-completed"}`}>
         {props.text}
       </p>
