@@ -56,7 +56,7 @@ function AppUI() {
             onComplete={() => completeTodo(todo.id)}
             onOpenDeleteModal={() => {
               setOpenDeleteModal(true);
-              setTodoToDelete(todo.text);
+              setTodoToDelete(todo.id);
             }}
             onOpenEditionModal={() => {
               setOpenEditionModal(true);

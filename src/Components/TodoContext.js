@@ -54,8 +54,8 @@ function TodoProvider({ children }) {
     saveTodos(newTodos);
   };
 
-  const deleteTodo = (text) => {
-    const newTodos = todos.filter((todo) => todo.text !== text);
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
     saveTodos(newTodos);
     setOpenDeleteModal(false);
   };
