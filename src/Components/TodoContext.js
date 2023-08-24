@@ -12,6 +12,7 @@ function TodoProvider({ children }) {
   } = useLocalStorage("TASKAPP_V1", []);
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
   const [openCreationModal, setOpenCreationModal] = React.useState(false);
+  const [openEditionModal, setOpenEditionModal] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [todoToDelete, setTodoToDelete] = React.useState(null);
 
@@ -31,6 +32,18 @@ function TodoProvider({ children }) {
       completed: false,
     });
     saveTodos(newTodos);
+  };
+
+  const editTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    console.log(todoIndex);
+    newTodos[todoIndex] = {
+      text,
+      completed: false,
+    };
+    saveTodos(newTodos);
+    console.log(newTodos);
   };
 
   const completeTodo = (text) => {
@@ -55,7 +68,10 @@ function TodoProvider({ children }) {
         setOpenDeleteModal,
         openCreationModal,
         setOpenCreationModal,
+        openEditionModal,
+        setOpenEditionModal,
         addTodo,
+        editTodo,
         deleteTodo,
         todoToDelete,
         completedTodos,

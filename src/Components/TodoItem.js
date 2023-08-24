@@ -3,7 +3,7 @@ import "../Styles/TodoItem.css";
 function TodoItem(props) {
   return (
     <li className="itemContainer">
-      <button className="edit"></button>
+      <button className="edit" onClick={props.onOpenDeletionModal}></button>
       <button
         className={`check-mark ${props.completed && "check-mark-active"}`}
         onClick={props.onComplete}

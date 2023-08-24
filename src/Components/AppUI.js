@@ -7,6 +7,7 @@ import { TodoCreationButton } from "./TodoCreationButton";
 import { TodosLoading } from "./TodosLoading";
 import { TodosError } from "./TodosError";
 import { TodoForm } from "./TodoForm";
+import { EditTodoForm } from "./EditTodoForm";
 import { EmptyTodos } from "./EmptyTodos";
 import { DeleteModal } from "./DeleteModal";
 import { CreationModal } from "./CreationModal";
@@ -20,6 +21,8 @@ function AppUI() {
     setOpenDeleteModal,
     openCreationModal,
     setOpenCreationModal,
+    openEditionModal,
+    setOpenEditionModal,
     deleteTodo,
     todoToDelete,
     searchedTodos,
@@ -55,6 +58,9 @@ function AppUI() {
               setOpenDeleteModal(true);
               setTodoToDelete(todo.text);
             }}
+            onOpenDeletionModal={() => {
+              setOpenEditionModal(true);
+            }}
           />
         ))}
       </TodoList>
@@ -63,6 +69,12 @@ function AppUI() {
       {openCreationModal && (
         <CreationModal>
           <TodoForm />
+        </CreationModal>
+      )}
+
+      {openEditionModal && (
+        <CreationModal>
+          <EditTodoForm />
         </CreationModal>
       )}
     </>
