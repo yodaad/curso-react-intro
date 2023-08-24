@@ -66,6 +66,7 @@ function TodoProvider({ children }) {
       value={{
         loading,
         error,
+        todos,
         openDeleteModal,
         setOpenDeleteModal,
         openCreationModal,

@@ -3,9 +3,10 @@ import { TodoContext } from "./TodoContext";
 import "../Styles/EditTodoForm.css";
 
 function EditTodoForm() {
-  const { editTodo, setOpenEditionModal, todoToEdit } =
+  const { editTodo, setOpenEditionModal, todoToEdit, todos } =
     React.useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = React.useState("");
+  const todoToEditText = todos.find((todo) => todo.id === todoToEdit);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -28,7 +29,7 @@ function EditTodoForm() {
       </div>
       <label>Edit the task</label>
       <textarea
-        placeholder="Edit"
+        placeholder={todoToEditText.text}
         value={newTodoValue}
         onChange={onChange}
         required
