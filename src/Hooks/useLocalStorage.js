@@ -45,11 +45,11 @@ function useLocalStorage(itemName, initialValue) {
 export { useLocalStorage };
 
 /* const defaultTodos = [
-  { text: "Hacer compras", completed: true },
-  { text: "Crear cuentas de marketing", completed: false },
-  { text: "Ir al banco", completed: false },
-  { text: "Hacer aseo en la casa", completed: false },
-  { text: "Enviar cotizaciones", completed: true },
+  { id: 1, text: "Hacer compras", completed: true },
+  { id: 2, text: "Crear cuentas de marketing", completed: false },
+  { id: 3, text: "Ir al banco", completed: false },
+  { id: 4, text: "Hacer aseo en la casa", completed: false },
+  { id: 5, text: "Enviar cotizaciones", completed: true },
 ];
 
 localStorage.setItem('TASKAPP_V1', JSON.stringify(defaultTodos));

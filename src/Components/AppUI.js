@@ -50,10 +50,10 @@ function AppUI() {
 
         {searchedTodos.map((todo) => (
           <TodoItem
-            key={todo.text}
+            key={todo.id}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
+            onComplete={() => completeTodo(todo.id)}
             onOpenDeleteModal={() => {
               setOpenDeleteModal(true);
               setTodoToDelete(todo.text);

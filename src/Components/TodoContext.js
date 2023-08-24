@@ -28,6 +28,7 @@ function TodoProvider({ children }) {
   const addTodo = (text) => {
     const newTodos = [...todos];
     newTodos.push({
+      id: newTodos.length + 1,
       text,
       completed: false,
     });
@@ -46,9 +47,9 @@ function TodoProvider({ children }) {
     console.log(newTodos);
   };
 
-  const completeTodo = (text) => {
+  const completeTodo = (id) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id);
     newTodos[todoIndex].completed = true;
     saveTodos(newTodos);
   };
