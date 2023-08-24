@@ -52,7 +52,11 @@ function TodoProvider({ children }) {
   };
 
   const deleteTodo = (id) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    const newTodos = updatedTodos.map((todo, index) => ({
+      ...todo,
+      id: index + 1,
+    }));
     saveTodos(newTodos);
     setOpenDeleteModal(false);
   };
