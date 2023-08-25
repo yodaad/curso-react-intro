@@ -6,7 +6,7 @@
 }
 
 li {
-  font-size: 40px;
+  font-size: 22px;
   text-align: center;
   margin: 15px;
   padding: 10px;
@@ -20,6 +20,7 @@ li {
 
 .id {
   color: #f58335;
+  font-weight: bold;
   margin-top: 1.3em;
   margin-right: 0.5em;
 }
@@ -32,10 +33,10 @@ li {
   background: url("../Assets/edit-gray.png") no-repeat;
   background-size: 100%;
   border: none;
-  width: 5em;
-  height: 5em;
+  width: 2.5em;
+  height: 2.5em;
   position: absolute;
-  top: 4.3em;
+  top: 1.8em;
   right: 16em;
   cursor: pointer;
 }
@@ -44,8 +45,8 @@ li {
   .itemContainer .edit:hover {
     background: url("../Assets/edit.png") no-repeat;
     background-size: 100%;
-    width: 5em;
-    height: 5em;
+    width: 3em;
+    height: 3em;
     cursor: pointer;
   }
 }
@@ -54,10 +55,10 @@ li {
   background: url("../Assets/check-mark-gray.png") no-repeat;
   background-size: 100%;
   border: none;
-  width: 6em;
-  height: 6em;
+  width: 3.5em;
+  height: 3.5em;
   position: absolute;
-  top: 4em;
+  top: 1.5em;
   right: 7.5em;
   cursor: pointer;
 }
@@ -66,8 +67,8 @@ li {
   .itemContainer .check-mark:hover {
     background: url("../Assets/check-mark.png") no-repeat;
     background-size: 100%;
-    width: 6em;
-    height: 6em;
+    width: 4em;
+    height: 4em;
     cursor: pointer;
   }
 }
@@ -75,18 +76,18 @@ li {
 .itemContainer .check-mark-active {
   background: url("../Assets/check-mark.png") no-repeat;
   background-size: 100%;
-  width: 6em;
-  height: 6em;
+  width: 3.5em;
+  height: 3.5em;
 }
 
 .itemContainer .delete {
   background: url("../Assets/delete-gray.png") no-repeat;
   background-size: 100%;
   border: none;
-  width: 5em;
-  height: 5em;
+  width: 2.5em;
+  height: 2.5em;
   position: absolute;
-  top: 4em;
+  top: 1.8em;
   right: 1em;
   cursor: pointer;
 }
@@ -96,8 +97,8 @@ li {
     background: url("../Assets/delete.png") no-repeat;
     background-size: 100%;
     border: none;
-    width: 5em;
-    height: 5em;
+    width: 3em;
+    height: 3em;
     cursor: pointer;
   }
 }

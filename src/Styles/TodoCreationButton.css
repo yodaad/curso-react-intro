@@ -1,32 +1,31 @@
 .buttonContainer {
   display: flex;
-  justify-content: center;
-  position: relative;
-  margin-top: 20px;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
 }
 
 .buttonContainer button {
   background-color: #5a7eb7;
   color: white;
-  font-size: 40px;
+  font-size: 20px;
   border: none;
-  border-radius: 20px;
+  border-radius: 50%;
   box-shadow: 2px 2px black;
-  margin: 1em 15px 1em 15px;
+  margin-top: 10px;
   height: 3em;
-  width: 100%;
+  width: 3em;
   cursor: pointer;
 }
 
 .buttonContainer button:hover {
   background-color: #f58335;
-  color: white;
-  font-size: 40px;
-  border-radius: 20px;
+  border-radius: 50%;
   margin-top: 1em;
   box-shadow: 2px 2px black;
-  margin: 1em 15px 1em 15px;
   height: 3em;
-  width: 100%;
+  width: 3em;
   cursor: pointer;
 }
