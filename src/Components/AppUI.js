@@ -47,7 +47,6 @@ function AppUI() {
       <TodoList>
         {loading && <TodosLoading />}
         {error && <TodosError />}
-        {!loading && searchedTodos.length === 0 && <EmptyTodos />}
 
         {searchedTodos.map((todo) => (
           <TodoItem
@@ -67,6 +66,8 @@ function AppUI() {
           />
         ))}
       </TodoList>
+      {!loading && searchedTodos.length === 0 && <EmptyTodos />}
+
       <TodoCreationButton setOpenCreationModal={setOpenCreationModal} />
 
       {openCreationModal && (
