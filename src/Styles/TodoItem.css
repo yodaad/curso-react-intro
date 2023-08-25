@@ -40,12 +40,14 @@ li {
   cursor: pointer;
 }
 
-.itemContainer .edit:hover {
-  background: url("../Assets/edit.png") no-repeat;
-  background-size: 100%;
-  width: 5em;
-  height: 5em;
-  cursor: pointer;
+@media (hover: hover) {
+  .itemContainer .edit:hover {
+    background: url("../Assets/edit.png") no-repeat;
+    background-size: 100%;
+    width: 5em;
+    height: 5em;
+    cursor: pointer;
+  }
 }
 
 .itemContainer .check-mark {
@@ -60,12 +62,14 @@ li {
   cursor: pointer;
 }
 
-.itemContainer .check-mark:hover {
-  background: url("../Assets/check-mark.png") no-repeat;
-  background-size: 100%;
-  width: 6em;
-  height: 6em;
-  cursor: pointer;
+@media (hover: hover) {
+  .itemContainer .check-mark:hover {
+    background: url("../Assets/check-mark.png") no-repeat;
+    background-size: 100%;
+    width: 6em;
+    height: 6em;
+    cursor: pointer;
+  }
 }
 
 .itemContainer .check-mark-active {
@@ -87,13 +91,15 @@ li {
   cursor: pointer;
 }
 
-.itemContainer .delete:hover {
-  background: url("../Assets/delete.png") no-repeat;
-  background-size: 100%;
-  border: none;
-  width: 5em;
-  height: 5em;
-  cursor: pointer;
+@media (hover: hover) {
+  .itemContainer .delete:hover {
+    background: url("../Assets/delete.png") no-repeat;
+    background-size: 100%;
+    border: none;
+    width: 5em;
+    height: 5em;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 1200px) {
