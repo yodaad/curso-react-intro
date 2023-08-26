@@ -1,5 +1,5 @@
 import React from "react";
-import { Info } from "./Info.js";
+import { Header } from "./Header.js";
 import { TodoCount } from "./TodoCount";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
@@ -40,7 +40,7 @@ function AppUI() {
           onDelete={() => deleteTodo(todoToDelete)}
         />
       )}
-      <Info />
+      <Header />
       <TodoCount />
 
       <TodoSearch />
