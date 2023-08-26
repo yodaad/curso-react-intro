@@ -1,0 +1,21 @@
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.infoContainer button {
+  background: url("../Assets/info.png") no-repeat;
+  border: none;
+  background-size: 100%;
+  width: 3.5em;
+  height: 3.5em;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.infoContainer img {
+  background-size: 100%;
+  width: 150px;
+}
