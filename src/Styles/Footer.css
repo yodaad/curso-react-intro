@@ -1,0 +1,29 @@
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.footerContainer p {
+  font-size: 15px;
+  color: black;
+}
+
+.footerContainer .linkedin {
+  height: 26px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.footerContainer .github {
+  height: 25px;
+  margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .footerContainer {
+    justify-content: left;
+    margin-left: 1em;
+  }
+}
