@@ -1,19 +1,9 @@
-.deleteModalBackground {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.89);
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .deleteModalContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   width: 350px;
   height: 270px;
   border: 5px solid red;
@@ -31,8 +21,10 @@
 }
 
 .deleteModalClose {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
 }
 
 .deleteModalClose button {
@@ -65,4 +57,22 @@
 
 .deleteModalNo {
   background-color: red;
+}
+
+@media (max-width: 1200px) {
+  .deleteModalContainer {
+    width: 290px;
+    height: 223px;
+  }
+
+  .deleteModalContainer .deleteModalTitle {
+    font-size: medium;
+  }
+
+  .deleteModalContainer .deleteModalFooter button {
+    font-size: 0.9em;
+    width: 130px;
+    height: 40px;
+    margin: 8px;
+  }
 }

@@ -66,3 +66,34 @@ textarea {
 .TodoForm-button--accept {
   background-color: green;
 }
+
+@media (max-width: 1200px) {
+  form {
+    width: 290px;
+    height: 223px;
+  }
+
+  label {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    font-size: 18px;
+    padding: 10px;
+    height: 100px;
+    width: 250px;
+    margin-bottom: 15px;
+  }
+
+  .TodoForm-button {
+    font-size: 0.9em;
+    width: 130px;
+    height: 40px;
+    margin: 10px;
+  }
+
+  .TodoForm-button--accept {
+    margin-left: auto;
+  }
+}

@@ -36,8 +36,6 @@ function AppUI() {
     setTodoToDelete,
   } = React.useContext(TodoContext);
 
-  console.log(openInfoModal);
-
   return (
     <>
       <Header
@@ -95,10 +93,12 @@ function AppUI() {
       )}
 
       {openDeleteModal && (
-        <DeleteModal
-          closeModal={() => setOpenDeleteModal(false)}
-          onDelete={() => deleteTodo(todoToDelete)}
-        />
+        <CreationModal>
+          <DeleteModal
+            closeModal={() => setOpenDeleteModal(false)}
+            onDelete={() => deleteTodo(todoToDelete)}
+          />
+        </CreationModal>
       )}
 
       <Footer />
