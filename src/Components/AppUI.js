@@ -13,6 +13,7 @@ import { EditTodoForm } from "./EditTodoForm";
 import { EmptyTodos } from "./EmptyTodos";
 import { DeleteModal } from "./DeleteModal";
 import { CreationModal } from "./CreationModal";
+import { InfoModal } from "./InfoModal.js";
 import { TodoContext } from "./TodoContext";
 
 function AppUI() {
@@ -25,6 +26,8 @@ function AppUI() {
     setOpenCreationModal,
     openEditionModal,
     setOpenEditionModal,
+    openInfoModal,
+    setOpenInfoModal,
     deleteTodo,
     todoToDelete,
     setTodoToEdit,
@@ -33,15 +36,16 @@ function AppUI() {
     setTodoToDelete,
   } = React.useContext(TodoContext);
 
+  console.log(openInfoModal);
+
   return (
     <>
-      {openDeleteModal && (
-        <DeleteModal
-          closeModal={() => setOpenDeleteModal(false)}
-          onDelete={() => deleteTodo(todoToDelete)}
-        />
-      )}
-      <Header />
+      <Header
+        onOpenInfoModal={() => {
+          setOpenInfoModal(true);
+        }}
+      />
+
       <TodoCount />
 
       <TodoSearch />
@@ -72,6 +76,12 @@ function AppUI() {
 
       <TodoCreationButton setOpenCreationModal={setOpenCreationModal} />
 
+      {openInfoModal && (
+        <CreationModal>
+          <InfoModal closeModal={() => setOpenInfoModal(false)} />
+        </CreationModal>
+      )}
+
       {openCreationModal && (
         <CreationModal>
           <TodoForm />
@@ -82,6 +92,13 @@ function AppUI() {
         <CreationModal>
           <EditTodoForm />
         </CreationModal>
+      )}
+
+      {openDeleteModal && (
+        <DeleteModal
+          closeModal={() => setOpenDeleteModal(false)}
+          onDelete={() => deleteTodo(todoToDelete)}
+        />
       )}
 
       <Footer />

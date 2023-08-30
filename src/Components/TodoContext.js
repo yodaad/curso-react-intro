@@ -13,6 +13,7 @@ function TodoProvider({ children }) {
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
   const [openCreationModal, setOpenCreationModal] = React.useState(false);
   const [openEditionModal, setOpenEditionModal] = React.useState(false);
+  const [openInfoModal, setOpenInfoModal] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const [todoToDelete, setTodoToDelete] = React.useState(null);
   const [todoToEdit, setTodoToEdit] = React.useState(null);
@@ -72,6 +73,8 @@ function TodoProvider({ children }) {
         setOpenCreationModal,
         openEditionModal,
         setOpenEditionModal,
+        openInfoModal,
+        setOpenInfoModal,
         addTodo,
         editTodo,
         deleteTodo,
