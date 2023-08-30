@@ -1,4 +1,4 @@
-form {
+.EditForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,7 +6,7 @@ form {
   position: relative;
   width: 350px;
   height: 270px;
-  border: 5px solid #f58335;
+  border: 5px solid #5a7eb7;
   border-radius: 20px;
   background-color: white;
   padding: 30px;
@@ -32,21 +32,21 @@ textarea {
   width: calc(100% - 30px);
 }
 
-.TodoForm-close {
+.EditForm-close {
   position: absolute;
   top: 0;
   right: 0;
   padding: 10px;
 }
 
-.TodoForm-close button {
+.EditForm-close button {
   border: none;
   background-color: transparent;
   font-size: 20px;
   cursor: pointer;
 }
 
-.TodoForm-button {
+.EditForm-button {
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
@@ -60,9 +60,9 @@ textarea {
   border-radius: 20px;
 }
 
-.TodoForm-button--cancel {
+.EditForm-button--cancel {
   background-color: red;
 }
-.TodoForm-button--accept {
+.EditForm-button--accept {
   background-color: green;
 }

@@ -23,8 +23,8 @@ function EditTodoForm() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <div className="TodoForm-close">
+    <form className="EditForm" onSubmit={onSubmit}>
+      <div className="EditForm-close">
         <button onClick={onCancel}> X </button>
       </div>
       <label>Edit the task</label>
@@ -34,15 +34,15 @@ function EditTodoForm() {
         onChange={onChange}
         required
       />
-      <div className="TodoForm-buttonContainer">
+      <div className="EditForm-buttonContainer">
         <button
           type="submit"
-          className="TodoForm-button TodoForm-button--accept"
+          className="EditForm-button EditForm-button--accept"
         >
           Edit
         </button>
         <button
-          className="TodoForm-button TodoForm-button--cancel"
+          className="EditForm-button EditForm-button--cancel"
           onClick={onCancel}
         >
           Cancel
