@@ -5,8 +5,8 @@ import "../Styles/EditTodoForm.css";
 function EditTodoForm() {
   const { editTodo, setOpenEditionModal, todoToEdit, todos } =
     React.useContext(TodoContext);
-  const [newTodoValue, setNewTodoValue] = React.useState("");
   const todoToEditText = todos.find((todo) => todo.id === todoToEdit);
+  const [newTodoValue, setNewTodoValue] = React.useState(todoToEditText.text);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -28,12 +28,7 @@ function EditTodoForm() {
         <button onClick={onCancel}> X </button>
       </div>
       <label>Edit the task</label>
-      <textarea
-        placeholder={todoToEditText.text}
-        value={newTodoValue}
-        onChange={onChange}
-        required
-      />
+      <textarea type="text" value={newTodoValue} onChange={onChange} required />
       <div className="EditForm-buttonContainer">
         <button
           type="submit"
