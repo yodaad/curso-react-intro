@@ -3,6 +3,7 @@
   justify-content: left;
   position: relative;
   padding-left: 1em;
+  margin: 1em;
 }
 
 li {
@@ -37,7 +38,7 @@ li {
   height: 2.5em;
   position: absolute;
   top: 1.8em;
-  right: 16em;
+  right: 18em;
   cursor: pointer;
 }
 
@@ -59,7 +60,7 @@ li {
   height: 3.5em;
   position: absolute;
   top: 1.5em;
-  right: 7.5em;
+  right: 9.5em;
   cursor: pointer;
 }
 
@@ -88,7 +89,7 @@ li {
   height: 2.5em;
   position: absolute;
   top: 1.8em;
-  right: 1em;
+  right: 3em;
   cursor: pointer;
 }
 
@@ -106,28 +107,28 @@ li {
 @media (max-width: 1200px) {
   .itemContainer .edit,
   .itemContainer .edit:hover {
-    width: 2em;
-    height: 2em;
+    width: 1.7em;
+    height: 1.7em;
     top: 0.7em;
     right: 8em;
   }
 
   .itemContainer .check-mark,
   .itemContainer .check-mark:hover {
-    width: 3em;
-    height: 3em;
+    width: 2.6em;
+    height: 2.6em;
     top: 0.4em;
-    right: 3.9em;
+    right: 5em;
   }
   .itemContainer .check-mark-active {
-    width: 3em;
-    height: 3em;
+    width: 2.6em;
+    height: 2.6em;
   }
 
   .itemContainer .delete,
   .itemContainer .delete:hover {
-    width: 2em;
-    height: 2em;
+    width: 1.7em;
+    height: 1.7em;
     top: 0.7em;
   }
 }

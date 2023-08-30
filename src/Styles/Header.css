@@ -1,6 +1,7 @@
 .infoContainer {
   display: flex;
   justify-content: space-between;
+  width: 99%;
   align-items: center;
   margin-bottom: 15px;
 }
