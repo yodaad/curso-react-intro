@@ -17,6 +17,12 @@ li {
 
 .text {
   margin-top: 1.3em;
+  text-align: left;
+}
+
+.text-container {
+  width: 73%;
+  margin-right: 3em;
 }
 
 .id {
@@ -89,7 +95,7 @@ li {
   height: 2.5em;
   position: absolute;
   top: 1.8em;
-  right: 3em;
+  right: 2.5em;
   cursor: pointer;
 }
 
@@ -110,7 +116,7 @@ li {
     width: 1.7em;
     height: 1.7em;
     top: 0.7em;
-    right: 8em;
+    right: 7.5em;
   }
 
   .itemContainer .check-mark,
@@ -118,7 +124,7 @@ li {
     width: 2.6em;
     height: 2.6em;
     top: 0.4em;
-    right: 5em;
+    right: 4.5em;
   }
   .itemContainer .check-mark-active {
     width: 2.6em;

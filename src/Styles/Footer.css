@@ -21,10 +21,3 @@
   height: 25px;
   margin-top: 10px;
 }
-
-@media (max-width: 1200px) {
-  .footerContainer {
-    justify-content: left;
-    margin-left: 1em;
-  }
-}

@@ -9,9 +9,11 @@ function TodoItem(props) {
         onClick={props.onComplete}
       ></button>
       <p className="id">{props.id}.</p>
-      <p className={`text ${props.completed && "text-completed"}`}>
-        {props.text}
-      </p>
+      <div className="text-container">
+        <p className={`text ${props.completed && "text-completed"}`}>
+          {props.text}
+        </p>
+      </div>
       <button
         className="delete delete-active open-delete-modal"
         onClick={props.onOpenDeleteModal}
