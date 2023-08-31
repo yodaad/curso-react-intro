@@ -2,6 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 99vh;
+  min-height: 95vh;
   position: relative;
 }
